@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define MAX_TEXT_SIZE 1000
@@ -40,10 +42,7 @@ void printText(Line* text) {
 }
 
 int main() {
-    Line* text = createLine();
-    Line* currentLine = text;
     int command;
-    char input[MAX_TEXT_SIZE];
 
     while (1) {
         printf("Choose the command:\n");
@@ -52,28 +51,24 @@ int main() {
         printf("3| Use files to saving the information\n");
         printf("4| Use files to loading the information\n");
         printf("5| Print the current text to console\n");
-        printf("6| Insert text by line and symbol indexx\n");
+        printf("6| Insert text by line and symbol index\n");
         printf("7| Search for a substring\n");
-        printf("8| (Optional) Clear the console\n");
+        printf("8| Clear the console\n");
         printf("9| Exit\n");
 
         scanf("%d", &command);
 
         switch (command) {
             case 1:
-                printf("Enter text to append:\n");
-                scanf(" %[^\n]", input);
-                appendText(currentLine, input);
+                printf(" Enter text to append: \n");
                 break;
 
             case 2:
-                currentLine = startNewLine(currentLine);
-                printf("New line is started.\n");
+                printf("New line is started\n");
                 break;
 
             case 3:
-                printf("Current text:\n");
-                printText(text);
+                printf("");
                 break;
 
             case 4:
@@ -93,17 +88,19 @@ int main() {
                 break;
 
             case 8:
-                printf("Console has been cleared\n");
+                printf("Console cleared\n");
                 break;
 
             case 9:
                 exit(0);
 
-
             default:
                 printf("The command is not implemented.\n");
                 break;
         }
+
     }
+
+    return 0;
 }
 
