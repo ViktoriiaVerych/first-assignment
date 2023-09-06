@@ -7,4 +7,4 @@ include_directories(a1)
 
 add_executable(PROJECTS
         a1/a.h
-        a1/Untitled1.c)
+        first-assignment/Untitled1.c)
