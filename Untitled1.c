@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define MAX_TEXT_SIZE 1000
