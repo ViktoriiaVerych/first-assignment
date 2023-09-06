@@ -52,7 +52,7 @@ int main() {
         printf("3| Use files to saving the information\n");
         printf("4| Use files to loading the information\n");
         printf("5| Print the current text to console\n");
-        printf("6| Insert text by line and symbol index\n");
+        printf("6| Insert text by line and symbol indexx\n");
         printf("7| Search for a substring\n");
         printf("8| (Optional) Clear the console\n");
         printf("9| Exit\n");
