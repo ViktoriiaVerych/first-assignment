@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Browser</title>
+    <style>
+        .length-conversion {
+            margin: 20px;
+            padding: 20px;            
+        }
+
+        .em-relative{
+            font-size: 1.5em;
+        }
+
+        .ex-relative{
+            font-size: 4ex;
+        }
+
+        .ch-relative{
+            font-size: 5ch;
+        }
+
+        .rem-relative{
+            font-size: 2.2rem;
+        }
+
+        .vw-relative{
+            font-size: 3vw;
+        }
+
+        .vh-relative{
+            font-size: 4vh;
+        }
+
+        .vmin-relative{
+            font-size: 4vmin;
+        }
+
+        .vmax-relative{
+            font-size: 3vmax;
+        }
+
+        .per-relative{
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="length-conversion">
+        <h2>Relative length</h2>
+        <p class="em-relative">em - Relative to the font-size of the element</p>
+        <p class="ex-relative">ex - Relative to the x-height of the current font </p>
+        <p class="ch-relative">ch - Relative to the width of the "0" (zero)</p>
+        <p class="rem-relative">rem - Relative to font-size of the root element</p>
+        <p class="vh-relative">vh - Relative to 1% of the height of the viewport</p>
+        <p class="vw-relative">vw - Relative to 1% of the width of the viewport</p>
+        <p class="vmin-relative">vmin - Relative to 1% of viewport's smaller dimension</p>
+        <p class="vmax-relative">vmax - Relative to 1% of viewport's larger dimension</p>
+        <p class="per-relative">% - Relative to the parent element</p>
+
+    </div>
+</body>
+</html>
