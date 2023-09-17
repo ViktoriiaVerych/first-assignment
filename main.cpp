@@ -73,6 +73,30 @@ void searchInText(Line* text, const char* substring) {
     }
 }
 
+// Function to insert text at a specific line and symbol index
+void insertText(Line* text, int line, int index, const char* insertText) {
+    Line* current = text;
+    for (int i = 0; i < line; i++) {
+        if (current->next == NULL) {
+            printf("Line index %d not found\n", line);
+            return;
+        }
+        current = current->next;
+    }
+    if (index < 0 || index > strlen(current->data)) {
+        printf("Invalid symbol index %d\n", index);
+        return;
+    }
+    char* newString = (char*)malloc(strlen(current->data) + strlen(insertText) + 1);
+    strncpy(newString, current->data, index);
+    newString[index] = '\0';
+    strcat(newString, insertText);
+    strcat(newString, current->data + index);
+    strcpy(current->data, newString);
+    free(newString);
+}
+
+
 
 int main() {
     int command;
@@ -116,8 +140,15 @@ int main() {
                 break;
 
             case 6:
-                printf("");
+                printf("Type in format -- LINE INDEX: ");
+                int line, index;
+                scanf("%d %d", &line, &index);
+                printf("Enter text to insert: ");
+                char insertBuffer[MAX_TEXT_SIZE];
+                scanf(" %[^\n]", insertBuffer);
+                insertText(text, line, index, insertBuffer);
                 break;
+
 
             case 7:
                 printf("Enter text to search: ");
