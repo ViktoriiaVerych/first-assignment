@@ -84,9 +84,11 @@ int main() {
                 break;
 
             case 3:
-                printf("");
+                printf("Enter the file name for saving: ");
+                char saveFileName[MAX_TEXT_SIZE];
+                scanf(" %[^\n]", saveFileName);
+                saveTextToFile(text, saveFileName);
                 break;
-
             case 4:
                 printf("");
                 break;
