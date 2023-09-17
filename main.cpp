@@ -57,6 +57,23 @@ void saveTextToFile(Line* text, const char* filename) {
     }
 }
 
+// serxhes in the text
+void searchInText(Line* text, const char* substring) {
+    int lineIndex = 0;
+    Line* current = text;
+    while (current != NULL) {
+        char* position = strstr(current->data, substring);
+        while (position != NULL) {
+            int symbolIndex = position - current->data;
+            printf("Text is present in this position: %d %d\n", lineIndex, symbolIndex);
+            position = strstr(position + 1, substring);
+        }
+        current = current->next;
+        lineIndex++;
+    }
+}
+
+
 int main() {
     int command;
 
@@ -103,8 +120,12 @@ int main() {
                 break;
 
             case 7:
-                printf("");
+                printf("Enter text to search: ");
+                char searchString[MAX_TEXT_SIZE];
+                scanf(" %[^\n]", searchString);
+                searchInText(text, searchString);
                 break;
+
 
             case 8:
                 printf("Console cleared\n");
